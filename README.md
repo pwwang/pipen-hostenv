@@ -9,8 +9,6 @@
 
 <hr />
 
-Bring your host environment variables into the jobs of [pipen](https://github.com/pwwang/pipen) pipelines.
-
 Variables are read when each job is initialized and injected into the job's wrapper script
 (`export VAR='value'`), so they are available as `$VAR` in `script` and to any process the job
 starts. The pipen process itself is not modified.
