@@ -1,0 +1,30 @@
+[project]
+name = "pipen-hostenv"
+# version = "0.1.0"
+dynamic = ["version"]
+description = "Bring your host env to the jobs for pipen pipelines"
+readme = "README.md"
+authors = [
+    { name = "pwwang", email = "pwwang@pwwang.com" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "pipen>=1.1",
+    "python-dotenv>=1.0",
+]
+
+[tool.hatch.version]
+path = "src/pipen_hostenv/__init__.py"
+
+[project.entry-points.pipen]
+hostenv = "pipen_hostenv:PipenHostEnv"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pipen-verbose>=1.1.5",
+    "pytest>=8.4.2",
+]
